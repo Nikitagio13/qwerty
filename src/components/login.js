@@ -4,21 +4,18 @@ import {
     Platform,
     Keyboard,
     TextInput,
+    SafeAreaView,
     StyleSheet,
     TouchableOpacity,
     KeyboardAvoidingView, 
     TouchableWithoutFeedback,
 } from "react-native";
+
 import IconLock from 'react-native-vector-icons/FontAwesome';
 import IconPers from 'react-native-vector-icons/MaterialIcons';
 import IconEye from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export const Login = ({ navigation }) => {
-    // const permission = () => {
-    //     if(placeholder.value > 2) {
-    //         () => {navigation.navigate('MainPage')}
-    //     }
-    // }
 
     return (
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -26,7 +23,7 @@ export const Login = ({ navigation }) => {
                     behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
                     style={styles.container}
                 >
-                    <View>
+                    <SafeAreaView>
                         <Text style={styles.welcome}>Welcome Back !</Text>
                         <Text style={styles.enterDetails}>Enter your profile details</Text>
                         <View style={styles.loginContainer}>
@@ -55,7 +52,7 @@ export const Login = ({ navigation }) => {
                                 <Text>Don't have account? Create now →</Text>
                             </TouchableOpacity>
                         </View>
-                    </View>
+                    </SafeAreaView>
                 </KeyboardAvoidingView>
             </TouchableWithoutFeedback>
     )

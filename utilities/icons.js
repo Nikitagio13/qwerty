@@ -1,39 +1,9 @@
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 
 //ICONS FOR MAIN PAGE
-import IconHome from 'react-native-vector-icons/Octicons';
-import IconMarket from 'react-native-vector-icons/AntDesign';
-import IconArrows from 'react-native-vector-icons/MaterialIcons';
-import IconWallet from 'react-native-vector-icons/MaterialCommunityIcons';
-import IconMore from 'react-native-vector-icons/Feather';
 import IconDollar from 'react-native-vector-icons/FontAwesome';
+import IconTrendingUp from 'react-native-vector-icons/Feather';
 
-
-export const Icons = () => {
-    return (
-        <View style={styles.container}>
-            <TouchableOpacity style={styles.alignIcons}>
-                <IconHome name={'home'} size={30} color={'#8F9093'} />
-                <Text style={styles.textStyle}>Home</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.alignIcons}>
-                <IconMarket name={'appstore1'} size={30} color={'#8F9093'} />
-                <Text style={styles.textStyle}>Market</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.arrowsBackground}>
-                <IconArrows name={'compare-arrows'} size={35} color={'#696B6E'} />
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.alignIcons}>
-                <IconWallet name={'wallet-outline'} size={35} color={'#8F9093'} />
-                <Text style={styles.textStyle}>Portfolio</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.alignIcons}>
-                <IconMore name={'more-horizontal'} size={35} color={'#8F9093'} />
-                <Text style={styles.textStyle}>More</Text>
-            </TouchableOpacity>
-        </View>
-    )
-}
 
 export const MainPageIcons = () => {
     return (
@@ -42,30 +12,21 @@ export const MainPageIcons = () => {
                 <IconDollar name={'dollar'} size={40} color={'#111315'}/>
                 <Text style={styles.totalAmount}>12.535.00</Text>
             </View>
+            <View style={styles.trendingUp}>
+                <IconTrendingUp name={'trending-up'} size={15} color={'#28CD41'}/>
+            </View>
+            <View style={styles.buyingPowerContainer}>
+                <IconDollar name={'dollar'} size={20} color={'#111315'}/>
+                <Text style={styles.buyingPowerText}>840.50</Text>
+                <TouchableOpacity style={styles.depositButton}>
+                    <Text style={styles.depositText}>+  Deposit</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flexDirection: "row",
-        justifyContent: 'space-around',
-        paddingTop: 12,
-        paddingHorizontal: 10
-    },
-    alignIcons: {
-        justifyContent: "center",
-        alignItems: 'center'
-    },
-    textStyle: {
-        color: '#8F9093'
-    },
-    arrowsBackground: {
-        justifyContent: 'center',
-        backgroundColor: '#e7e5e3',
-        borderRadius: '50%',
-        padding: 13
-    },
     containerForTotal: {
        flexDirection: 'row',
        marginTop: 15
@@ -76,5 +37,33 @@ const styles = StyleSheet.create({
         position: 'absolute',
         left: 25,
         top: -4
-    }   
+    },
+    trendingUp: {
+        marginTop: 10
+    },
+    buyingPowerContainer: {
+        flexDirection: 'row',
+        position: 'relative',
+        top: 100,
+    },
+    buyingPowerText: {
+        fontWeight: '700',
+        fontSize: 20,
+        position: 'relative',
+        bottom: 2,
+        left: 2
+    },
+    depositButton: {
+        position: 'relative',
+        left: 140,
+        bottom: 5,
+        backgroundColor: '#F3F3F3',
+        paddingHorizontal: 30,
+        paddingVertical: 8,
+        borderRadius: '50%'
+    },
+    depositText: {
+        fontSize: 14,
+        fontWeight: '700'
+    }  
 })
